@@ -1,0 +1,199 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Added padding for small screens */
+    box-sizing: border-box; /* Ensures padding is included in element's total width */
+}
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 900px; /* Adjust as needed */
+    height: 600px; /* Fixed height for the container, adjust as needed */
+    border-radius: 12px;
+    overflow: hidden; /* Ensures rounded corners are applied */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Explicitly set container background to white */
+}
+.left-panel {
+    flex: 1;
+    /* Changed to linear-gradient background */
+    background: linear-gradient(135deg, #db0606, #e727e7, #031669); /* Requested gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+.left-panel .logo {
+    width: 80px; /* Adjust logo size */
+    height: 80px;
+    margin-bottom: 20px;
+}
+.left-panel .logo-text {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.right-panel {
+    flex: 1.5; /* Larger right panel */
+    background-color: #ffffff; /* Explicitly set right panel background to white */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* For absolute positioning of footer/copyright within this panel */
+}
+.login-form-container {
+    width: 80%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.welcome-text {
+    color: #6b7280; /* Gray-500 */
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+.login-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1f2937; /* Gray-900 */
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #4b5563; /* Gray-700 */
+    margin-bottom: 8px;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db; /* Gray-300 */
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6; /* Blue-500 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 20px; /* Space between button and new links footer */
+}
+.login-button:hover {
+    background-color: #2563eb; /* Blue-600 */
+}
+
+/* New styles for the auth links footer */
+.auth-links-footer {
+    display: flex;
+    justify-content: space-between; /* Distribute items to opposite ends */
+    width: 100%; /* Take full width of parent */
+    padding: 0 5px; /* Small padding */
+}
+
+.auth-link {
+    color: #3b82f6; /* Blue link color */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+.auth-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Moved copyright and footer text inside right-panel for consistent absolute positioning */
+.footer-text, .copyright-text {
+    position: absolute;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+.footer-text {
+    bottom: 20px;
+    right: 20px;
+}
+.copyright-text {
+    bottom: 20px;
+    left: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        /* Remove explicit flex centering for body on small screens if container handles it */
+        display: block; /* Allows container to manage its own layout */
+        min-height: unset; /* Remove min-height from body */
+    }
+    .container {
+        flex-direction: column;
+        width: 95%;
+        height: auto; /* Allow height to adjust */
+        min-height: 100vh; /* Make container take full viewport height on small screens */
+    }
+    .left-panel {
+        padding: 40px 20px;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 12px;
+    }
+    .right-panel {
+        padding: 40px 20px;
+    }
+    .login-form-container {
+        width: 90%;
+    }
+    .footer-text, .copyright-text {
+        position: static; /* Remove absolute positioning on small screens */
+        text-align: center;
+        margin-top: 20px;
+    }
+    .copyright-text {
+        order: 2; /* Move copyright below footer-text on small screens */
+    }
+    .auth-links-footer {
+        flex-direction: column; /* Stack links vertically on small screens */
+        gap: 10px; /* Space between stacked links */
+        align-items: center; /* Center them when stacked */
+    }
+    /* Add this to your style.css file */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns by default */
+    gap: 20px; /* Space between grid items */
+    margin-bottom: 20px; /* Space between the grid and the button */
+}
+
+.form-grid .form-group.full-width {
+    grid-column: 1 / -1; /* Make these items span all columns */
+}
+
+/* Responsive adjustment for form grid */
+@media (max-width: 600px) { /* Adjust breakpoint as needed */
+    .form-grid {
+        grid-template-columns: 1fr; /* Stack columns vertically on smaller screens */
+        gap: 15px;
+    }
+}
+}

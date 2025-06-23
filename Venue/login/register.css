@@ -1,0 +1,233 @@
+/* --- Global / Base Styles --- */
+/* This section sets default styles that apply broadly across pages */
+body {
+    font-family: 'Inter', sans-serif; /* Primary font for login/register pages */
+    background-color: #f0f2f5; /* Light grey background for the overall page */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Default body display for pages like index.html that don't need centering */
+    display: block;
+    min-height: unset;
+}
+
+/* Styles to center the content for login and registration pages specifically */
+body.login-page-body,
+body.register-page-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Add some padding for small screens */
+}
+
+
+/* --- Shared Container Styles for Login and Register Pages --- */
+/* This container defines the two-column layout */
+.container.login-container,
+.container.register-container {
+    display: flex;
+    width: 90%;
+    max-width: 900px;
+    height: 600px; /* Fixed height for the container, adjust as needed */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Explicitly set container background to white */
+}
+
+.left-panel {
+    flex: 1;
+    /* Gradient background for the left panel */
+    background: linear-gradient(135deg, #db0606, #e727e7, #031669); /* Requested gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+.left-panel .logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+.left-panel .logo-text {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.right-panel {
+    flex: 1.5;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* For absolute positioning of footer/copyright */
+}
+
+/* --- Form Container Styles (Shared and Specific) --- */
+/* Generic styles for form containers on both login and register pages */
+.login-form-container,
+.register-form-container { /* Added .register-form-container */
+    width: 80%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    /* Scroll properties for register-form-container */
+    max-height: 500px; /* Set a max height for the form content area */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    padding-right: 15px; /* Add padding to account for scrollbar width */
+}
+/* Ensure the padding-right doesn't mess up non-scrolling forms */
+.login-form-container {
+    padding-right: 30px; /* Restore original padding if no scrollbar needed */
+    max-height: unset; /* No max-height for login form unless specified */
+    overflow-y: unset; /* No scroll for login form unless specified */
+}
+
+
+.welcome-text {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+.form-title { /* Generic title class for both login and register */
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 8px;
+    text-align: left;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* --- Button Styles (Shared and Specific) --- */
+/* Primary button style for both login and register forms */
+.primary-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6; /* Blue-500 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 20px; /* Space between button and links footer */
+}
+.primary-button:hover {
+    background-color: #2563eb; /* Blue-600 */
+}
+
+/* This targets the login button specifically within the login-form-container if you want different styles */
+/*
+.login-form-container .login-button {
+    margin-bottom: 20px;
+}
+*/
+
+/* --- Auth Links Footer (Shared) --- */
+.auth-links-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.auth-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+.auth-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* --- Footer and Copyright Text (Shared) --- */
+/* These are positioned absolutely relative to .right-panel */
+.footer-text, .copyright-text {
+    position: absolute;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+.footer-text {
+    bottom: 20px;
+    right: 20px;
+}
+.copyright-text {
+    bottom: 20px;
+    left: 20px;
+}
+
+/* --- Responsive Adjustments (Shared) --- */
+@media (max-width: 768px) {
+    /* Apply to both login and register containers */
+    .container.login-container,
+    .container.register-container {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+        min-height: 100vh; /* Ensures it takes full height on small screens */
+    }
+    .left-panel {
+        padding: 40px 20px;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 12px;
+    }
+    .right-panel {
+        padding: 40px 20px;
+    }
+    .login-form-container,
+    .register-form-container { /* Apply to both form containers */
+        width: 90%;
+        max-height: unset; /* Remove max-height for scrollable form on small screens if not needed */
+        overflow-y: unset; /* Remove scroll for form on small screens if not needed */
+        padding-right: 30px; /* Restore original padding */
+    }
+    /* Footer and copyright positioning for small screens */
+    .footer-text, .copyright-text {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .copyright-text {
+        order: 2;
+    }
+    .auth-links-footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Responsive adjustment for form grid */
+    .form-grid {
+        grid-template-columns: 1fr; /* Stack columns vertically on smaller screens */
+        gap: 15px;
+    }
+}

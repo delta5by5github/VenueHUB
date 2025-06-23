@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VenueHub - Register</title>
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to our custom stylesheet -->
+    <link rel="stylesheet" href="register.css">
+</head>
+<body class="register-page-body"> <!-- Added class for register page specific body styles -->
+    <div class="container register-container"> <!-- Added class to distinguish from login page container -->
+        <div class="left-panel">
+            <!-- Using your image path, but adding an onerror for robustness -->
+            <img src="../assets/Leonardo_Phoenix_a_modern_company_logo_featuring_two_stylized_0-removebg-preview.png"
+                alt="VenueHub" width="100" height="100" class="logo"
+                onerror="this.onerror=null;this.src='https://placehold.co/100x100/A0A0A0/FFFFFF?text=VH';">
+            <span class="logo-text">VenueHub</span>
+        </div>
+        <div class="right-panel">
+            <div class="register-form-container"> <!-- Renamed class for clarity -->
+                <h2 class="form-title">REGISTER ACCOUNT</h2> <!-- Renamed class for consistency -->
+                <form id="registrationForm"> <!-- Added ID for JS targeting -->
+                    <div class="form-grid"> <!-- New container for grid layout -->
+                        <div class="form-group">
+                            <label for="firstName">Name(s)</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="surname">Surname</label>
+                            <input type="text" id="surname" name="surname" placeholder="Enter your Surname" required>
+                        </div>
+                        <div class="form-group full-width"> <!-- Full width for these fields -->
+                            <label for="regUsername">Username</label>
+                            <input type="text" id="regUsername" name="regUsername" placeholder="Choose your username" required>
+                        </div>
+                        <div class="form-group full-width"> <!-- Full width for these fields -->
+                            <label for="regEmail">Email</label>
+                            <input type="email" id="regEmail" name="regEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regPassword">Password</label>
+                            <input type="password" id="regPassword" name="regPassword" placeholder="Create a password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
+                        </div>
+                    </div> <!-- End of form-grid -->
+                    
+                    <button type="submit" class="primary-button">Register Account</button> <!-- Changed text and class -->
+
+                    <!-- Link back to Login Page -->
+                    <p class="auth-link-text">Already have an account? <a href="login.html">Log In</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Footer and copyright outside the main container for easier absolute positioning on wide screens -->
+   
+    <!-- Link to registration-specific JavaScript file -->
+    <script src="register.js"></script>
+</body>
+</html>

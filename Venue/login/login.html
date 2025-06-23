@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VenueHub - Login</title>
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to our custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+          <!-- Using your image path, but adding an onerror for robustness -->
+          <img src="../assets/Leonardo_Phoenix_a_modern_company_logo_featuring_two_stylized_0-removebg-preview.png"
+               alt="VenueHub" width="100" height="100" class="logo"
+               onerror="this.onerror=null;this.src='https://placehold.co/100x100/A0A0A0/FFFFFF?text=VH';">
+            <span class="logo-text">VenueHub</span>
+        </div>
+        <div class="right-panel">
+            <div class="login-form-container">
+                <p class="welcome-text">Welcome to VenueHub</p>
+                <h2 class="login-title">Log into your Account</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <!-- Added one-time-token input as script.js expects it -->
+                    
+                  
+                    <!-- Login button - corrected by removing the <a> tag wrap -->
+                    <button type="submit" class="login-button">Log In</button>
+
+                    <!-- New: Register and Sign Up links positioned at opposite ends -->
+                    <div class="auth-links-footer">
+                        <a href="register.html" class="auth-link">Register</a>
+                        <a href="signup.html" class="auth-link">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+           
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

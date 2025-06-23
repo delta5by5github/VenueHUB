@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VenueHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="./assets/Leonardo_Phoenix_a_modern_company_logo_featuring_two_stylized_0-removebg-preview.png" alt="VenueHub Logo" width="40" class="logo-icon"> <span>VenueHub</span>
+        </div>
+        <button class="login-button">Login</button>
+    </header>
+
+    <main class="container">
+        <section class="available-venues">
+            <h1>Available Venues</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search by capacity, location, or date">
+            </div>
+
+            <div class="venue-cards">
+                <div class="venue-card">
+                    <div class="venue-image placeholder-image conference-room-a"></div>
+                    <div class="venue-info">
+                        <h3>Conference Room</h3>
+                        <p>Capacity: 50 people</p>
+                        <p>Location: Building 10</p>
+                        <button class="view-details-button">View Details</button>
+                    </div>
+                </div>
+
+                <div class="venue-card">
+                    <div class="venue-image placeholder-image banquet-hall-b"></div>
+                    <div class="venue-info">
+                        <h3>Multi Purpose Hall</h3>
+                        <p>Capacity: 200 people</p>
+                        <p>Location: Uptown</p>
+                        <button class="view-details-button">View Details</button>
+                    </div>
+                </div>
+
+                <div class="venue-card">
+                    <div class="venue-image placeholder-image garden-venue-c"></div>
+                    <div class="venue-info">
+                        <h3>Garden Venue</h3>
+                        <p>Capacity: 100 people</p>
+                        <p>Location: Suburbs</p>
+                        <button class="view-details-button">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming-bookings">
+            <h2>Upcoming Bookings</h2>
+            <div class="bookings-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Conference Room A</td>
+                            <td>12/12/2023</td>
+                            <td>10:00 AM - 12:00 PM</td>
+                            <td>John Smith</td>
+                            <td class="status-confirmed">Confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>Banquet Hall B</td>
+                            <td>15/12/2023</td>
+                            <td>6:00 PM - 9:00 PM</td>
+                            <td>Emily Davis</td>
+                            <td class="status-pending">Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Garden Venue C</td>
+                            <td>18/12/2023</td>
+                            <td>1:00 PM - 4:00 PM</td>
+                            <td>Michael Lee</td>
+                            <td class="status-cancelled">Cancelled</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
