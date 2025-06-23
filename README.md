@@ -34,4 +34,4 @@ VenueHub is a simple web application designed to showcase available venues and m
 * **Google Fonts ('Inter', 'Roboto'):** For modern typography.
 * **JavaScript (ES6+):** For interactive elements and page navigation.
 
-## File Structure
+
